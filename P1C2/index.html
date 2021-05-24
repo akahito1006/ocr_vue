@@ -11,7 +11,7 @@
 
 <body>
   <div class="app">
-    <h1>French Bakery</h1>
+    <h1>{{ restaurantName }}</h1>
     <p class="description">
       Welcome to French Bakery! We are known for our freshly baked bread and
       french pastries! Give you morning a warm start or treat yourself in the
@@ -23,6 +23,17 @@
       <p>Copyright French Bakery 2019</p>
     </footer>
   </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    const app = new Vue({
+      el: '.app',
+      data: {
+        restaurantName: 'French Bakery'
+      }
+      // dataの中は1つの中カッコ
+    })
+  </script>
 </body>
 
 </html>
