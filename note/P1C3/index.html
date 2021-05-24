@@ -15,14 +15,14 @@
       <li>Bananas: ${{ constOfBananas }}</li>
       <li>Coconut: ${{ constOfCoconuts }}</li>
     </ul>
-    <p>Total: ${{ constOfApples + constOfBananas + constOfCoconuts }}</p>
+    <p>Total: ${{ totalAmount }}</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script>
     const app = new Vue({
       el: '#app',
       data: {
-        constOfApples: 16,
+        constOfApples: 20,
         constOfBananas: 2,
         constOfCoconuts: 8
       },
