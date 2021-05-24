@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Simple Vue.js App</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>VueMart</h1>
+
+    <h2>Shopping Cart</h2>
+    <ul>
+      <li>Apples: ${{ constOfApples }}</li>
+      <li>Bananas: ${{ constOfBananas }}</li>
+      <li>Coconut: ${{ constOfCoconuts }}</li>
+    </ul>
+    <p>Total: ${{ constOfApples + constOfBananas + constOfCoconuts }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        constOfApples: 16,
+        constOfBananas: 2,
+        constOfCoconuts: 8
+      },
+      // Computed Properties as "function"
+      computed: {
+        totalAmount() {
+          return this.constOfApples + this.constOfBananas + this.constOfCoconuts
+        }
+      }
+      // 
+    })
+  </script>
+</body>
+
+</html>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+
+<!-- 
+ノート
+
+2. Computed Properties
+  他のデータに基づいてアップデートされる値。
+  データプロパティとは異なり、値を返すfunctionでなければならない。
+  計算し期待される結果を返す動作をする。
+
+  計算方法をfunctionとして定義しておくことにより、HTMLコードの単純化が可能である
+
+  例ではES6省略形(i.e., totalAmount() {...} )を用いている。
+  これは( totalAmount: function() {...} )の省略形である。
+    ※注意　アロー関数は使ってはならない。
+      thisコンテクストがリセットされてしまうので、Vueインスタンスの"this"を呼び出せなくなる。
+      データプロパティを参照するためには、"this"が利用可能である必要がある。
+      
+-->
