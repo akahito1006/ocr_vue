@@ -5,14 +5,15 @@
   </head>
   <body>
     <div id="app">
-      <h1>VueMart</h1>
+      <!-- DoubleCurlyBracesはJSの基本的表現で表示することができる -->
+      <!-- 計算 -->
+      {{ (2 + 8) * 10 }} 
 
-      <h2>Shopping Cart</h2>
-      <ul>
-        <li>Apples: ${{ constOfApples }}</li>
-        <li>Bananas: ${{ constOfBananas }}</li>
-        <li>Coconut: ${{ constOfCoconuts }}</li>
-      </ul>
+      <!-- 文字列と修飾 -->
+      {{ "ben".toUpperCase() }}
+
+      <!-- 三項（条件）演算子 -->
+      {{ 2>0 ? '2は0より大きい' : 'この文は見えない' }}
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
