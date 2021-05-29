@@ -80,7 +80,7 @@
   - v-on
   - v-model
 
-2. コンテンツの表示を切り替える
+2. コンテンツの表示を切り替える（v-if, v-show)
   条件によってコンテンツの表示、非表示を切り替える。
   2種類のディレクティブが用いられる。
   ・v-if, v-else-if, v-else
@@ -120,7 +120,7 @@
       v-show=""も同様に条件式が使われている。
       例ではbooleanのデータを呼び出して直接用いており、内容がfalseなのでv-showの条件分岐より非表示となる。
       
-  3. コンテンツをループ表示させる
+  3. コンテンツをループ表示させる(v-if="... in xxxx")
     v-forはリストにまとめたデータを、HTML要素を繰り返して表示させる用途で用いられる
     JSの基本的文法にしたがって記述される。（for...in ループ構文）
     ex)
@@ -150,4 +150,71 @@
      {{ item.label }}と記述してitemハッシュに格納されたlabelキーの値を呼び出している）
 
      v-"for"に対する"in"は、続く””の中で登場する。
--->
+
+  4. HTML属性の動的定義（v-bind: ）
+    ハードコードではなく、データプロパティを参照することで属性を変化させるような場面でたびたび用いる。
+    以下は、APIからのデータをリクエストし、各ページのリンクをそれぞれ表示させるような場合の例である。
+    ex)
+      <div id="app">
+        <ul>
+          <li v-for="item in apiResponse">
+            <a v-bind:href="item.url">{{ item.name }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <script>
+        const app = new Vue ({
+          el: '#app',
+          data: {
+            apiResponse: [
+              { name: 'GitHub', url: '<https://www.github.com>' },
+              { name: 'Twitter', url: '<https://www.twitter.com>' },
+              { name: 'Netlify', url: '<https://www.netlify.com>' }
+            ]
+          }
+        })
+      </script>
+    
+    v-bindディレクティブは一般的に省略形で用いられる。
+    "v-bind:attributes"であるので、単にコロンだけを残し":attributes"と書かれる。
+    aタグのhref属性の場合は、v-bind:href="item.url" => :href="item.url"となる。
+  
+  5. listening to events and responding to them (v-on)
+    要素の特定のイベントをlistenさせたい時、v-onディレクティブが簡単に使えるイベントリスナーである。
+    ex)
+      <div id="app">
+        <button v-on:click="alert('you clicked this')">Click me</button>
+      </div>
+    v-onディレクティブも同様にして省略形が用いられる。
+    v-on:click="alert('Hello')" は@に置き換えて @click="alert('Hello')"と書かれる
+
+    v-on:click=""の""内は関数が入るが、単一のJSよりもさらに複雑な関数を設定したい場合は、
+    dataプロパティのように、関数の一連の内容をmethodsプロパティに定義しておくことで呼び出して使用することが可能となる。  
+    ex)
+      const app = new Vue ({
+        el: '#app',
+        data: {
+          favoriteColor: 'blue'
+        },
+        computed: {
+          label() {
+            return 'Color: ' + this.favoriteColor
+          }
+        },
+        methods: {
+          alertColor(colorLabel) {
+            alert('My favorite ' + colorLabel)
+          },
+          changeColor() {
+            // データプロパティの変更
+            this.favoriteColor = 'teal'
+            // 別のメソッドを呼び出し、computedプロパティを渡す
+            this.alertColor(this.label())
+          }
+        }
+      })
+
+      例の中でchangeColor関数を呼び出すと、結果、アラート"My favorite Color: teal"と表示される
+    
+  -->
