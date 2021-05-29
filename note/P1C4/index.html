@@ -217,4 +217,29 @@
 
       例の中でchangeColor関数を呼び出すと、結果、アラート"My favorite Color: teal"と表示される
     
+  6. フォーム入力でデータをアップデートする (v-model)
+    データストアをアップデートすることでバリデーションや計算に用いたい場面がある。
+    このような機能は手動でv-onとv-bindを組み合わせて実現することもできる一方、
+    Vueの場合は基本的な手法がはじめから用意されている。
+    
+    ユーザーの入力に追従してアップデートされるデータプロパティを定義することが可能である。
+    ex)
+      <div id="app">
+        <label for="un">Username</label>
+        <input id="un" type="text" v-model="username" />
+        <label for="pw">Password</label>
+        <input id="pw" type="password" v-model="password" />
+      </div>
+    
+      <script>
+        const app = new Vue ({
+          el: '#app',
+          data: {
+            username: '',
+            password: ''
+          }
+        })
+      </script>
+    
+      v-modelはinputタグに用いる。
   -->
