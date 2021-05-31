@@ -2,6 +2,7 @@
 export default {
   name: 'NavLink',
   props: ['url', 'text']
+  // here
 }
 </script>
 

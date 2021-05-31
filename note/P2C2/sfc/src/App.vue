@@ -15,6 +15,7 @@ export default {
       <NavLink url="/" text="Home" />
       <NavLink url="/about" text="About" />
       <NavLink url="/contact" text="Contact" />
+      <!-- here -->
     </nav>
   </div>
 </template>
