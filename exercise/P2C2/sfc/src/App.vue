@@ -9,7 +9,14 @@
       everyone can't get enough!
     </p>
 
-    <MenuItem />
+    <section class="menu">
+      <h2>Menu</h2>
+      <MenuItem 
+        v-for="item in simpleMenu"
+        :key="item.name" 
+        
+      />
+    </section>
 
     <aside class="shopping-cart">
       <h2>Shopping Cart: {{ shoppingCart }} items</h2>
@@ -38,46 +45,45 @@ export default {
   name: 'App',
   components: {
     MenuItem
-  }
-}
-
-const app = new Vue({
-  el: '#app',
-  data: {
-    address: '9274 Beurre Ave, Paris, France',
-    email: 'hello@cafewithavue.bakery',
-    phone: '+08 88 88 88 88 88',
-    restaurantName: 'Cafe with A Vue',
-    shoppingCart: 0,
-    simpleMenu: [
-      {
-        name: 'Crossiant',
-        image: {
-          source: '/images/crossiant.jpg',
-          alt: 'A crossiant'
+  },
+  // data プロパティはreturnで内容を返す関数として記述する
+  data() {
+    return {
+      address: '9274 Beurre Ave, Paris, France',
+      email: 'hello@cafewithavue.bakery',
+      phone: '+08 88 88 88 88 88',
+      restaurantName: 'Cafe with A Vue',
+      shoppingCart: 0,
+      simpleMenu: [
+        {
+          name: 'Crossiant',
+          image: {
+            source: '/images/crossiant.jpg',
+            alt: 'A crossiant'
+          },
+          inStock: true,
+          quantity: 1
         },
-        inStock: true,
-        quantity: 1
-      },
-      {
-        name: 'French Baguette',
-        image: {
-          source: '/images/french-baguette.jpeg',
-          alt: 'Four French Baguettes'
+        {
+          name: 'French Baguette',
+          image: {
+            source: '/images/french-baguette.jpeg',
+            alt: 'Four French Baguettes'
+          },
+          inStock: true,
+          quantity: 1
         },
-        inStock: true,
-        quantity: 1
-      },
-      {
-        name: 'Éclair',
-        image: {
-          source: '/images/eclair.jpg',
-          alt: 'Chocolate Éclair'
-        },
-        inStock: false,
-        quantity: 1
-      }
-    ]
+        {
+          name: 'Éclair',
+          image: {
+            source: '/images/eclair.jpg',
+            alt: 'Chocolate Éclair'
+          },
+          inStock: false,
+          quantity: 1
+        }
+      ]
+    }
   },
   computed: {
     copyright() {
@@ -91,7 +97,7 @@ const app = new Vue({
       this.shoppingCart += amount
     }
   }
-})
+}
 </script>
 
 <style lang="scss">
