@@ -8,6 +8,7 @@ export default {
 
 <template>
   <a :href="url">{{ text }}</a>
+  <!-- here -->
 </template>
 
 <style>
