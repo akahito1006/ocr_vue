@@ -13,8 +13,13 @@
       <h2>Menu</h2>
       <MenuItem 
         v-for="item in simpleMenu"
-        :key="item.name" 
-        
+        :key="item.name"
+
+        :addToShoppingCart="addToShoppingCart"
+        :quantity="item.quantity"
+        :inStock="item.inStock"
+        :name="item.name"
+        :image="item.image"
       />
     </section>
 
@@ -125,17 +130,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.menu-item {
-  display: flex;
-  width: 500px;
-  justify-content: space-between;
-  margin-bottom: 30px;
-}
-
-.menu-item__image {
-  max-width: 300px;
 }
 
 .shopping-cart {
