@@ -2,6 +2,15 @@
 export default {
   name: 'MenuItem',
   props: ['addToShoppingCart', 'quantity', 'inStock', 'name', 'image']
+  //   <MenuItem 
+  //   v-for="item in simpleMenu"
+  //   :key="item.name" 
+  //   :addToShoppingCart="addToShoppingCart"
+  //   :quantity="item.quantity"
+  //   :inStock="item.inStock"
+  //   :name="item.name"
+  //   :image="item.image"
+  // />
 }
 </script>
 
@@ -9,9 +18,10 @@ export default {
   <div class="menu-item">
     <img
       class="menu-item__image"
-      :src="item.image.source"
-      :alt="item.image.alt"
+      :src="image.source"
+      :alt="image.alt"
     />
+    <!-- :image="item.image"より、itemを消す 以下同様-->
     <div>
       <h3>{{ name }}</h3>
       <p v-if="inStock">In Stock</p>
@@ -20,7 +30,7 @@ export default {
         <label for="add-item-quantity">
           Quantity: {{ quantity }}
         </label>
-
+        <input v-model.number="quantity" id="add-item-quantity" type="number" />
         <button @click="addToShoppingCart(quantity)">
           Add to Shopping Cart
         </button>

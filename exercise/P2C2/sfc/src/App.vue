@@ -11,27 +11,15 @@
 
     <section class="menu">
       <h2>Menu</h2>
-      <div v-for="item in simpleMenu" :key="item.name" class="menu-item">
-        <img
-          class="menu-item__image"
-          :src="item.image.source"
-          :alt="item.image.alt"
-        />
-        <div>
-          <h3>{{ name }}</h3>
-          <p v-if="inStock">In Stock</p>
-          <p v-else>Out of Stock</p>
-          <div>
-            <label for="add-item-quantity">
-              Quantity: {{ quantity }}
-            </label>
-
-            <button @click="addToShoppingCart(quantity)">
-              Add to Shopping Cart
-            </button>
-          </div>
-        </div>
-      </div>
+      <MenuItem 
+        v-for="item in simpleMenu"
+        :key="item.name" 
+        :addToShoppingCart="addToShoppingCart"
+        :quantity="item.quantity"
+        :inStock="item.inStock"
+        :name="item.name"
+        :image="item.image"
+      />
     </section>
 
     <aside class="shopping-cart">
@@ -55,10 +43,12 @@
 </template>
 
 <script>
+import MenuItem from './components/MenuItem.vue'
+
 export default {
   name: 'App',
   components: {
-
+    MenuItem
   },
   // data プロパティはreturnで内容を返す関数として記述する
   data() {
