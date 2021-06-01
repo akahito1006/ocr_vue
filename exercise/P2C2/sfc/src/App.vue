@@ -11,16 +11,27 @@
 
     <section class="menu">
       <h2>Menu</h2>
-      <MenuItem 
-        v-for="item in simpleMenu"
-        :key="item.name"
+      <div v-for="item in simpleMenu" :key="item.name" class="menu-item">
+        <img
+          class="menu-item__image"
+          :src="item.image.source"
+          :alt="item.image.alt"
+        />
+        <div>
+          <h3>{{ name }}</h3>
+          <p v-if="inStock">In Stock</p>
+          <p v-else>Out of Stock</p>
+          <div>
+            <label for="add-item-quantity">
+              Quantity: {{ quantity }}
+            </label>
 
-        :addToShoppingCart="addToShoppingCart"
-        :quantity="item.quantity"
-        :inStock="item.inStock"
-        :name="item.name"
-        :image="item.image"
-      />
+            <button @click="addToShoppingCart(quantity)">
+              Add to Shopping Cart
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <aside class="shopping-cart">
@@ -44,12 +55,10 @@
 </template>
 
 <script>
-import MenuItem from './components/MenuItem.vue'
-
 export default {
   name: 'App',
   components: {
-    MenuItem
+
   },
   // data プロパティはreturnで内容を返す関数として記述する
   data() {
@@ -131,7 +140,16 @@ export default {
   justify-content: center;
   align-items: center;
 }
+.menu-item {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 
+.menu-item__image {
+  max-width: 300px;
+}
 .shopping-cart {
   position: absolute;
   right: 30px;

@@ -20,11 +20,7 @@ export default {
         <label for="add-item-quantity">
           Quantity: {{ quantity }}
         </label>
-        <input
-          v-model.number = 'quantity'
-          id="add-item-quantity"
-          type="number"
-        />
+
         <button @click="addToShoppingCart(quantity)">
           Add to Shopping Cart
         </button>
