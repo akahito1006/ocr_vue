@@ -12,6 +12,7 @@ export default {
   //   :image="item.image"
   // />
 }
+
 </script>
 
 <template>
@@ -30,12 +31,19 @@ export default {
         <label for="add-item-quantity">
           Quantity: {{ quantity }}
         </label>
+        <!-- コンポーネントでv-modelを使う 後のレッスンにて触れる -->
         <input 
-          v-model.number="quantity" 
+          v-model="quantity"
           id="add-item-quantity" 
           type="number" 
         />
-        <!-- コンポーネントでv-modelを使う https://jp.vuejs.org/v2/guide/components.html#%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%A7-v-model-%E3%82%92%E4%BD%BF%E3%81%86 -->
+        <!-- <input 
+          :value="quantity"
+          @input="$emit('quantity', $event.target.value)"
+          id="add-item-quantity" 
+          type="number" 
+        /> -->
+        <!-- https://jp.vuejs.org/v2/guide/components.html#%E3%82%B3%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%8D%E3%83%B3%E3%83%88%E3%81%A7-v-model-%E3%82%92%E4%BD%BF%E3%81%86 -->
         <button @click="addToShoppingCart(quantity)">
           Add to Shopping Cart
         </button>
