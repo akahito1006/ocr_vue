@@ -1283,7 +1283,7 @@
     webpack "^4.0.0"
     yorkie "^2.0.0"
 
-"@vue/cli-plugin-router@^4.5.13":
+"@vue/cli-plugin-router@^4.5.13", "@vue/cli-plugin-router@~4.5.0":
   version "4.5.13"
   resolved "https://registry.nlark.com/@vue/cli-plugin-router/download/@vue/cli-plugin-router-4.5.13.tgz#0b67c8898a2bf132941919a2a2e5f3aacbd9ffbe"
   integrity sha1-C2fIiYor8TKUGRmiouXzqsvZ/74=
@@ -1440,6 +1440,11 @@
     vue-template-es2015-compiler "^1.9.0"
   optionalDependencies:
     prettier "^1.18.2"
+
+"@vue/devtools-api@^6.0.0-beta.10":
+  version "6.0.0-beta.12"
+  resolved "https://registry.nlark.com/@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.12.tgz#693ffc77bfb66b080e5c9576abb5786c85470a32"
+  integrity sha1-aT/8d7+2awgOXJV2q7V4bIVHCjI=
 
 "@vue/preload-webpack-plugin@^1.1.0":
   version "1.1.2"
@@ -2112,7 +2117,7 @@ body-parser@1.19.0:
 
 bonjour@^3.5.0:
   version "3.5.0"
-  resolved "https://registry.nlark.com/bonjour/download/bonjour-3.5.0.tgz#8e890a183d8ee9a2393b3844c691a42bcf7bc9f5"
+  resolved "https://registry.npm.taobao.org/bonjour/download/bonjour-3.5.0.tgz#8e890a183d8ee9a2393b3844c691a42bcf7bc9f5"
   integrity sha1-jokKGD2O6aI5OzhExpGkK897yfU=
   dependencies:
     array-flatten "^2.1.0"
@@ -2527,7 +2532,7 @@ class-utils@^0.3.5:
 
 clean-css@4.2.x:
   version "4.2.3"
-  resolved "https://registry.npm.taobao.org/clean-css/download/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
+  resolved "https://registry.npm.taobao.org/clean-css/download/clean-css-4.2.3.tgz?cache=0&sync_timestamp=1616153973445&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fclean-css%2Fdownload%2Fclean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
   integrity sha1-UHtd59l7SO5T2ErbAWD/YhY4D3g=
   dependencies:
     source-map "~0.6.0"
@@ -2788,7 +2793,7 @@ constants-browserify@^1.0.0:
 
 content-disposition@0.5.3:
   version "0.5.3"
-  resolved "https://registry.nlark.com/content-disposition/download/content-disposition-0.5.3.tgz#e130caf7e7279087c5616c2007d0485698984fbd"
+  resolved "https://registry.npm.taobao.org/content-disposition/download/content-disposition-0.5.3.tgz#e130caf7e7279087c5616c2007d0485698984fbd"
   integrity sha1-4TDK9+cnkIfFYWwgB9BIVpiYT70=
   dependencies:
     safe-buffer "5.1.2"
@@ -4928,7 +4933,7 @@ is-ci@^1.0.10:
 
 is-color-stop@^1.0.0:
   version "1.1.0"
-  resolved "https://registry.nlark.com/is-color-stop/download/is-color-stop-1.1.0.tgz#cfff471aee4dd5c9e158598fbe12967b5cdad345"
+  resolved "https://registry.npm.taobao.org/is-color-stop/download/is-color-stop-1.1.0.tgz#cfff471aee4dd5c9e158598fbe12967b5cdad345"
   integrity sha1-z/9HGu5N1cnhWFmPvhKWe1za00U=
   dependencies:
     css-color-names "^0.0.4"
@@ -5110,7 +5115,7 @@ is-plain-object@^2.0.3, is-plain-object@^2.0.4:
 
 is-regex@^1.0.4, is-regex@^1.1.3:
   version "1.1.3"
-  resolved "https://registry.nlark.com/is-regex/download/is-regex-1.1.3.tgz#d029f9aff6448b93ebbe3f33dac71511fdcbef9f"
+  resolved "https://registry.nlark.com/is-regex/download/is-regex-1.1.3.tgz?cache=0&sync_timestamp=1620452320445&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fis-regex%2Fdownload%2Fis-regex-1.1.3.tgz#d029f9aff6448b93ebbe3f33dac71511fdcbef9f"
   integrity sha1-0Cn5r/ZEi5Prvj8z2scVEf3L758=
   dependencies:
     call-bind "^1.0.2"
@@ -6535,7 +6540,7 @@ pify@^4.0.1:
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
-  resolved "https://registry.nlark.com/pinkie-promise/download/pinkie-promise-2.0.1.tgz?cache=0&sync_timestamp=1618847023792&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpinkie-promise%2Fdownload%2Fpinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
+  resolved "https://registry.npm.taobao.org/pinkie-promise/download/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
   integrity sha1-ITXW36ejWMBprJsXh3YogihFD/o=
   dependencies:
     pinkie "^2.0.0"
@@ -6589,7 +6594,7 @@ posix-character-classes@^0.1.0:
 
 postcss-calc@^7.0.1:
   version "7.0.5"
-  resolved "https://registry.nlark.com/postcss-calc/download/postcss-calc-7.0.5.tgz#f8a6e99f12e619c2ebc23cf6c486fdc15860933e"
+  resolved "https://registry.npm.taobao.org/postcss-calc/download/postcss-calc-7.0.5.tgz?cache=0&sync_timestamp=1609689241961&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpostcss-calc%2Fdownload%2Fpostcss-calc-7.0.5.tgz#f8a6e99f12e619c2ebc23cf6c486fdc15860933e"
   integrity sha1-+KbpnxLmGcLrwjz2xIb9wVhgkz4=
   dependencies:
     postcss "^7.0.27"
@@ -7784,7 +7789,7 @@ snapdragon@^0.8.1:
 
 sockjs-client@^1.5.0:
   version "1.5.1"
-  resolved "https://registry.nlark.com/sockjs-client/download/sockjs-client-1.5.1.tgz#256908f6d5adfb94dabbdbd02c66362cca0f9ea6"
+  resolved "https://registry.npm.taobao.org/sockjs-client/download/sockjs-client-1.5.1.tgz#256908f6d5adfb94dabbdbd02c66362cca0f9ea6"
   integrity sha1-JWkI9tWt+5Tau9vQLGY2LMoPnqY=
   dependencies:
     debug "^3.2.6"
@@ -7796,7 +7801,7 @@ sockjs-client@^1.5.0:
 
 sockjs@^0.3.21:
   version "0.3.21"
-  resolved "https://registry.nlark.com/sockjs/download/sockjs-0.3.21.tgz#b34ffb98e796930b60a0cfa11904d6a339a7d417"
+  resolved "https://registry.npm.taobao.org/sockjs/download/sockjs-0.3.21.tgz?cache=0&sync_timestamp=1596167342406&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsockjs%2Fdownload%2Fsockjs-0.3.21.tgz#b34ffb98e796930b60a0cfa11904d6a339a7d417"
   integrity sha1-s0/7mOeWkwtgoM+hGQTWozmn1Bc=
   dependencies:
     faye-websocket "^0.11.3"
@@ -8746,6 +8751,13 @@ vue-loader@^15.9.2:
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
+
+vue-router@^4.0.0-0:
+  version "4.0.8"
+  resolved "https://registry.nlark.com/vue-router/download/vue-router-4.0.8.tgz#55d4290a3122444edbc91a3cd2492bb1d0cef494"
+  integrity sha1-VdQpCjEiRE7byRo80kkrsdDO9JQ=
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.10"
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.3"
