@@ -27,9 +27,11 @@
     </aside>
 
     <h2>Contact Us</h2>
-    <p>Address: {{ address }}</p>
-    <p>Phone: {{ phone }}</p>
-    <p>Email: {{ email }}</p>
+    <Contact
+      :address="address"
+      :phone="phone"
+      :email="email"
+    />
     <p>Hours:</p>
     <ul>
       <li>M-F: 06:00 to 16:00</li>
@@ -44,10 +46,12 @@
 
 <script>
 import MenuItem from '../components/MenuItem'
+import Contact from './Contact'
 export default {
   name: 'App',
   components: {
-    MenuItem
+    MenuItem,
+    Contact
   },
   data() {
     return {
