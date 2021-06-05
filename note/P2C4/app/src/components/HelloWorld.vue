@@ -35,7 +35,13 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
-  }
+  },
+  beforeCreate() { console.log('I have not been created yet!') },
+  created() { console.log('I have just been created!') },
+  beforeMount() { console.log('I am about to be mouted to the DOM!') },
+  mouted() { console.log('I am mouted to the DOM!') },
+  beforeDestroy() { console.log('I am about to be removed from the DOM') },
+  destroyed() { console.log('I no longer exist... ') }
 }
 </script>
 
